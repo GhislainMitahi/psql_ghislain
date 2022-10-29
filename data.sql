@@ -18,9 +18,9 @@ INSERT INTO owners(full_name,age) VALUES('Melody Pond',77);
 INSERT INTO owners(full_name,age) VALUES('Bob',45);
 INSERT INTO owners(full_name,age) VALUES('Jennifer Orwell',19);
 INSERT INTO owners(full_name,age) VALUES('Sam Smith',34);
+-- Update
 UPDATE animals SET species_id = (SELECT id FROM species WHERE name = 'Digimon') WHERE name LIKE '%mon';
-UPDATE animals SET species_id = (SELECT id FROM species WHERE name='Pokemon') WHERE name NOT LIKE '%mon';
-
+UPDATE animals SET species_id = (SELECT id FROM species WHERE name='Pokemon') WHERE name NOT LIKE '%mon'
 UPDATE animals SET owner_id=(SELECT id from owners WHERE full_name='Sam Smith') WHERE name='Agumon';
 UPDATE animals SET owner_id=(SELECT id from owners WHERE full_name='Jennifer Orwell') WHERE name='Gabumon';
 UPDATE animals SET owner_id=(SELECT id from owners WHERE full_name='Jennifer Orwell') WHERE name='Pikachu';
