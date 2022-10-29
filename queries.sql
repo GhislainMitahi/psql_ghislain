@@ -23,7 +23,7 @@ ELECT * from animals
 BEGIN;
 DELETE * FROM animals;
 ROLLBACK;
-SELECT * from animals
+SELECT * from animals;
 
 
 BEGIN;
@@ -57,8 +57,8 @@ SELECT a.name,v.visit_date, ve.name  from animals as a JOIN visits as v ON a.id 
 SELECT a.name, COUNT(v.visit_date) as c FROM animals as a JOIN visits as v ON a.id = v.animals_id GROUP by a.name ORDER BY c DESC LIMIT 1;
 SELECT a.name, ve.name, v.visit_date from animals as a JOIN visits as v on a.id = v.animals_id JOIN vets as ve on ve.id = v.vets_id WHERE ve.name='Maisy Smith' ORDER by v.visit_date asc LIMIT 1;
 SELECT a.name, ve.name, v.visit_date from animals as a JOIN visits as v on a.id = v.animals_id JOIN vets as ve on ve.id = v.vets_id ORDER by v.visit_date asc LIMIT 1;
-select count(*) from visits 
-    left join animals on animals.id = visits.animals_id 
+select count(*) from visits
+    left join animals on animals.id = visits.animals_id
     left join vets on vets.id = visits.vets_id
     where animals.species_id not in (select animals.species_id from specializations where specializations.vets_id = vets.id);
 select species.name, count(*) from visits left join animals on animals.id = visits.animals_id 
