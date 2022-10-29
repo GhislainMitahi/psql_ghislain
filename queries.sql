@@ -64,3 +64,6 @@ select count(*) from visits
 select species.name, count(*) from visits left join animals on animals.id = visits.animals_id 
     left join species ON animals.species_id = species.id
     left join vets ON vets.id = visits.vets_id where vets.name = 'Maisy Smith' group by species.name;
+
+
+    
