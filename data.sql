@@ -18,9 +18,9 @@ INSERT INTO owners(full_name,age) VALUES('Melody Pond',77);
 INSERT INTO owners(full_name,age) VALUES('Bob',45);
 INSERT INTO owners(full_name,age) VALUES('Jennifer Orwell',19);
 INSERT INTO owners(full_name,age) VALUES('Sam Smith',34);
--- Update
 UPDATE animals SET species_id = (SELECT id FROM species WHERE name = 'Digimon') WHERE name LIKE '%mon';
-UPDATE animals SET species_id = (SELECT id FROM species WHERE name='Pokemon') WHERE name NOT LIKE '%mon'
+UPDATE animals SET species_id = (SELECT id FROM species WHERE name='Pokemon') WHERE name NOT LIKE '%mon';
+
 UPDATE animals SET owner_id=(SELECT id from owners WHERE full_name='Sam Smith') WHERE name='Agumon';
 UPDATE animals SET owner_id=(SELECT id from owners WHERE full_name='Jennifer Orwell') WHERE name='Gabumon';
 UPDATE animals SET owner_id=(SELECT id from owners WHERE full_name='Jennifer Orwell') WHERE name='Pikachu';
@@ -62,4 +62,5 @@ INSERT INTO visits(animals_id, vets_id, visit_date) VALUES((SELECT id from anima
 INSERT INTO visits(animals_id, vets_id, visit_date) VALUES((SELECT id from animals WHERE name='Boarmon'),(SELECT id from vets WHERE name='Maisy Smith'), '2020/08/03');
 INSERT INTO visits(animals_id, vets_id, visit_date) VALUES((SELECT id from animals WHERE name='Blossom'),(SELECT id from vets WHERE name='Stephanie Mendez'), '2020/05/24');
 INSERT INTO visits(animals_id, vets_id, visit_date) VALUES((SELECT id from animals WHERE name='Blossom'),(SELECT id from vets WHERE name='William Tatcher'), '2021/01/11');
+
 

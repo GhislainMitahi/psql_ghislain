@@ -23,7 +23,7 @@ ELECT * from animals
 BEGIN;
 DELETE * FROM animals;
 ROLLBACK;
-SELECT * from animals;
+SELECT * from animals
 
 
 BEGIN;
@@ -65,5 +65,3 @@ select species.name, count(*) from visits left join animals on animals.id = visi
     left join species ON animals.species_id = species.id
     left join vets ON vets.id = visits.vets_id where vets.name = 'Maisy Smith' group by species.name;
 
-
-    
