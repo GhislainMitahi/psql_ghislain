@@ -23,3 +23,5 @@ CREATE TABLE visits(id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, animals_id 
 
 ALTER TABLE visits ADD FOREIGN KEY(animals_id) REFERENCES animals(id);
 ALTER TABLE visits ADD FOREIGN KEY(vets_id) REFERENCES vets(id);
+
+
